@@ -8,7 +8,9 @@
     "react-scripts": "5.0.1"
   },
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "reload": "cables --export 1IpWjq -d ./public/patch --skip-backups --no-index --combine-js"
   },
   "eslintConfig": {
     "extends": [
