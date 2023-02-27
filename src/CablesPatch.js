@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 /* global CABLES */
 
 export default class CablesPatch extends Component {
-
   constructor(props) {
     super(props);
     this.canvasId = props.canvasId || "glcanvas";
@@ -35,10 +34,13 @@ export default class CablesPatch extends Component {
 
   _initPatch() {
     const patchOptions = this.patchOptions;
-    if (!patchOptions.patch) patchOptions.patch = CABLES.exportedPatch;
     if (!patchOptions.onPatchLoaded) patchOptions.onPatchLoaded = this._patchInitialized.bind(this);
     if (!patchOptions.onFinishedLoading) patchOptions.onFinishedLoading = this._patchFinishedLoading.bind(this);
-    CABLES.patch = new CABLES.Patch(patchOptions);
+    if (CABLES) {
+      if (!patchOptions.patch) patchOptions.patch = CABLES.exportedPatch;
+      CABLES.patch = new CABLES.Patch(patchOptions);
+      window.CABLES = CABLES;
+    }
   }
 
   _patchInitialized(patch) {
@@ -49,6 +51,14 @@ export default class CablesPatch extends Component {
   _patchFinishedLoading(patch) {
     // The patch is ready now, all assets have been loaded
     console.log(this.patchDir + ' finished loading');
+
+    if (CABLES) {
+      const vars = CABLES.patch.getVars();
+
+      if (vars && Object.keys(vars).length > 0) {
+        this.props.setVariables(vars);
+      }
+    }
   }
 
 }
