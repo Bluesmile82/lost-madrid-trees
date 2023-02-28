@@ -4,7 +4,7 @@ import { useEffect, useState, useCallback } from 'react';
 
 function App() {
   const [variables, setVariables] = useState();
-  // const [CABLES, setCABLES] = useState();
+  const [CABLES, setCABLES] = useState();
   const [selectedVariables, setSelectedVariables] = useState({});
 
   const setSelectedVariable = useCallback(
@@ -45,31 +45,40 @@ function App() {
       <CablesPatch
         patchDir={'/patch/'}
         setVariables={setVariables}
-        // setCABLES={setCABLES}
+        setCABLES={setCABLES}
       />
-      {/* {page1Visibility < 1 && (
+      {page1Visibility < 1 && (
         <div className="years">
           Pasa el cursor sobre los años:{' '}
           <span
             className="year"
-            onMouseEnter={() => CABLES.patch.setVariable('year', 2019)}
+            onMouseEnter={(e) => {
+              e.preventDefault();
+              CABLES.patch.setVariable('year', 2019);
+            }}
           >
             2019
           </span>
           <span
             className="year"
-            onMouseEnter={() => CABLES.patch.setVariable('year', 2021)}
+            onMouseEnter={(e) => {
+              e.preventDefault();
+              CABLES.patch.setVariable('year', 2021);
+            }}
           >
             2021
           </span>
           <span
             className="year"
-            onMouseEnter={() => CABLES.patch.setVariable('year', 2022)}
+            onMouseEnter={(e) => {
+              e.preventDefault();
+              CABLES.patch.setVariable('year', 2022);
+            }}
           >
             2022
           </span>
         </div>
-      )} */}
+      )}
     </div>
   );
 }
