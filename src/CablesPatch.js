@@ -53,8 +53,9 @@ export default class CablesPatch extends Component {
     console.log(this.patchDir + ' finished loading');
 
     if (CABLES) {
-      const vars = CABLES.patch.getVars();
+      this.props.setCABLES(CABLES);
 
+      const vars = CABLES.patch.getVars();
       if (vars && Object.keys(vars).length > 0) {
         this.props.setVariables(vars);
       }

@@ -21,9 +21,31 @@ canvas {
   user-select: none;
 }
 
-.title {
+.container {
   display: block;
   position: absolute;
+  width: 100%;
+  color: black;
+  z-index: 1;
+  text-align: center;
+}
+
+.years {
+  display: block;
+  position: absolute;
+  bottom: 100px;
+  width: 100%;
+  color: black;
+  z-index: 1;
+  text-align: center;
+}
+
+.year {
+  margin-right: 5px;
+  color: white;
+}
+
+.title {
   width: 100%;
   color: black;
   z-index: 1;
