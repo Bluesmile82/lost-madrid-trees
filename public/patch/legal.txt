@@ -11,3 +11,8 @@ MIT:
 Public Domain:
 
 - Photoshop math GLSL shaders by Romain Dura (https://mouaif.wordpress.com/2009/01/05/photoshop-math-with-glsl-shaders/)
+- ammo.js (https://github.com/kripken/ammo.js/)
+
+SGI-B-2.0:
+
+- tess2 (https://github.com/memononen/tess2.js)

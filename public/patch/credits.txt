@@ -7,3 +7,4 @@
 - ops by cables user action (https://cables.gl/user/action)
 - Photoshop math GLSL shaders by Romain Dura (https://mouaif.wordpress.com/2009/01/05/photoshop-math-with-glsl-shaders/)
 - ops by cables user andro (https://cables.gl/user/andro)
+- ops by cables user stephan (https://cables.gl/user/stephan)
